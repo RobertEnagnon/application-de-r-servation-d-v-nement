@@ -31,6 +31,10 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.event-list {
+    display: flex;
+    gap: 10px;
+}
 
 .event-item {
     margin-bottom: 15px;
@@ -42,6 +46,9 @@ h1 {
 
 .event-item:hover {
     background: #f0f0f0;
+}
+.event-item img{
+    height: 200px;
 }
 
 button {
