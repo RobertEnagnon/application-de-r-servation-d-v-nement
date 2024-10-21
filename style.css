@@ -1,0 +1,309 @@
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.event-list, .reservation-form, .reservation-list {
+    margin: 20px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.event-item:hover {
+    background: #f0f0f0;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.success-message {
+    color: #5cb85c;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.error-message {
+    color: #d9534f;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.loading div {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #007BFF;
+    margin: 0 5px;
+    animation: bounce 0.6s infinite alternate;
+}
+
+.loading div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+
+
+
+/* Section de la liste des réservations */
+.reservation-list {
+    margin-top: 50px;
+}
+
+.reservation-list h2 {
+    font-size: 2em;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#reservations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+.reservation-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.reservation-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.reservation-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(0, 123, 255, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 0;
+}
+
+.reservation-item:hover::before {
+    opacity: 1;
+}
+
+.reservation-item h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #007bff;
+    z-index: 1;
+    position: relative;
+}
+
+.reservation-item p {
+    font-size: 1em;
+    color: #555;
+    margin: 5px 0;
+    z-index: 1;
+    position: relative;
+}
+
+.reservation-item .reservation-quantity {
+    font-weight: bold;
+    color: #28a745;
+    z-index: 1;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .reservation-item {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .reservation-item {
+        max-width: 100%;
+        padding: 15px;
+    }
+}
+
+
+/* Styles existants */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.event-item button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        width: 100%;
+        margin: 20px;
+    }
+}
+
+
+/* Dark theme styles */
+.dark-theme {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+.dark-theme .event-item {
+    background: #444;
+    color: #f4f4f4;
+}
+
+.dark-theme button {
+    background: #5cb85c;
+    color: white;
+}
+
+.dark-theme input,
+.dark-theme select {
+    background: #555;
+    color: #f4f4f4;
+    border: 1px solid #777;
+}
+
+.dark-theme input:focus,
+.dark-theme select:focus {
+    border: 1px solid #5cb85c;
+}
+
+

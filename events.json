@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Conférence sur la Technologie",
+        "description": "Une conférence sur les dernières innovations technologiques.",
+        "location": "Paris, France",
+        "availableSpots": 30,
+        "image": "images/image1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Atelier de Développement Web",
+        "description": "Un atelier interactif pour apprendre le développement web.",
+        "location": "Lyon, France",
+        "availableSpots": 20,
+        "image": "images/image2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Séminaire de Marketing Digital",
+        "description": "Apprenez les meilleures pratiques en marketing digital.",
+        "location": "Marseille, France",
+        "availableSpots": 15,
+        "image": "images/image3.jpg"
+    }
+]
